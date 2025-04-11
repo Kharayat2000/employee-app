@@ -1,0 +1,236 @@
+.container {
+  padding: 20px;
+  position: relative;
+  background-color: rgb(234, 234, 234);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.head {
+  color: #1DA1F2;
+  margin-bottom: 13px;
+}
+
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  color: #888;
+
+  svg {
+    max-width: 250px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.employee-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.delete-background {
+  background-color: #ff4d4f;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.delete-icon {
+  font-size: 22px;
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.employee-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.card-content {
+  cursor: pointer;
+
+  h4 {
+    margin: 0 0 4px 0;
+  }
+
+  .details-pos {
+    font-size: 16px;
+    color: grey;
+    margin-bottom: 8px;
+  }
+
+  .details {
+    font-size: 14px;
+    color: grey;
+  }
+}
+
+.add-button {
+  z-index: 100;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #1DA1F2;
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.employee-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.employee-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.delete-background {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.delete-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.employee-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.employee-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.delete-background {
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.delete-icon {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.employee-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.employee-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+
+  &.swiped {
+    transform: translateX(-80px); // adjust to expose the delete icon
+  }
+}
+
+.delete-bg {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  border-radius: 8px;
+  z-index: 1;
+
+  .trash-icon {
+    font-size: 36px; // Increased from 28px
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
+   
+  }
+}
+.position{
+color: grey;
+font-size: 17px;
+}
+.dates{
+  color: grey;
+  font-size: 15px;
+  }
+  
+
+
+

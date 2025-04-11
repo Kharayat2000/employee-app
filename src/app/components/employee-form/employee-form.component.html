@@ -1,0 +1,102 @@
+<nav class="navbar">
+    <span class="app-title">
+        <h2 class="">{{ isEdit ? 'Edit Employee Details' : 'Add Employee Details' }}</h2>
+    </span>
+</nav>
+
+<div class="form-container container-sm">
+    <div class="mb-3">
+        <div class="input-icon-wrapper">
+            <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.99997 7.69228C7.03749 7.69228 6.21354 7.34958 5.52813 6.66418C4.84271 5.97876 4.5 5.15481 4.5 4.19233C4.5 3.22983 4.84271 2.40588 5.52813 1.72048C6.21354 1.03506 7.03749 0.692352 7.99997 0.692352C8.96246 0.692352 9.78641 1.03506 10.4718 1.72048C11.1572 2.40588 11.5 3.22983 11.5 4.19233C11.5 5.15481 11.1572 5.97876 10.4718 6.66418C9.78641 7.34958 8.96246 7.69228 7.99997 7.69228ZM13.9808 15.3077H2.0192C1.59742 15.3077 1.23877 15.1599 0.943275 14.8644C0.647758 14.5689 0.5 14.2102 0.5 13.7885V13.0846C0.5 12.5949 0.633016 12.1414 0.89905 11.7241C1.16507 11.3068 1.52051 10.9859 1.96537 10.7616C2.95384 10.2769 3.95096 9.91348 4.95672 9.67118C5.96249 9.42888 6.97691 9.30773 7.99997 9.30773C9.02304 9.30773 10.0375 9.42888 11.0432 9.67118C12.049 9.91348 13.0461 10.2769 14.0346 10.7616C14.4794 10.9859 14.8349 11.3068 15.1009 11.7241C15.3669 12.1414 15.5 12.5949 15.5 13.0846V13.7885C15.5 14.2102 15.3522 14.5689 15.0567 14.8644C14.7612 15.1599 14.4025 15.3077 13.9808 15.3077ZM1.99997 13.8077H14V13.0846C14 12.882 13.9413 12.6945 13.824 12.5221C13.7067 12.3497 13.5474 12.209 13.3461 12.1C12.4846 11.6756 11.6061 11.3542 10.7107 11.1356C9.81524 10.917 8.91167 10.8077 7.99997 10.8077C7.08827 10.8077 6.18471 10.917 5.28927 11.1356C4.39384 11.3542 3.51536 11.6756 2.65382 12.1C2.45254 12.209 2.29325 12.3497 2.17595 12.5221C2.05863 12.6945 1.99997 12.882 1.99997 13.0846V13.8077ZM7.99997 6.19233C8.54998 6.19233 9.02081 5.99649 9.41247 5.60483C9.80414 5.21316 9.99998 4.74233 9.99998 4.19233C9.99998 3.64233 9.80414 3.17149 9.41247 2.77983C9.02081 2.38816 8.54998 2.19233 7.99997 2.19233C7.44998 2.19233 6.97914 2.38816 6.58747 2.77983C6.19581 3.17149 5.99997 3.64233 5.99997 4.19233C5.99997 4.74233 6.19581 5.21316 6.58747 5.60483C6.97914 5.99649 7.44998 6.19233 7.99997 6.19233Z"
+                        fill="#1DA1F2" />
+                </svg>
+            </span>
+            <input type="text" [(ngModel)]="employee.name" name="name" required #name="ngModel" class="form-control"
+                placeholder="Employee Name" />
+        </div>
+        <div *ngIf="submitted && !employee.name" class="error mt-2">Name is required.</div>
+    </div>
+
+    <div class="mb-3 d-none d-md-block">
+        <div class="role-select-wrapper">
+            <span class="role-icon">
+                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.3077 17.5C1.80257 17.5 1.375 17.325 1.025 16.975C0.675 16.625 0.5 16.1974 0.5 15.6923V5.30773C0.5 4.80259 0.675 4.37503 1.025 4.02503C1.375 3.67503 1.80257 3.50003 2.3077 3.50003H6.5V1.80775C6.5 1.30263 6.675 0.875076 7.025 0.525076C7.375 0.175076 7.80257 7.62939e-05 8.3077 7.62939e-05H11.6923C12.1974 7.62939e-05 12.625 0.175076 12.975 0.525076C13.325 0.875076 13.5 1.30263 13.5 1.80775V3.50003H17.6923C18.1974 3.50003 18.625 3.67503 18.975 4.02503C19.325 4.37503 19.5 4.80259 19.5 5.30773V15.6923C19.5 16.1974 19.325 16.625 18.975 16.975C18.625 17.325 18.1974 17.5 17.6923 17.5H2.3077ZM2.3077 16H17.6923C17.7692 16 17.8397 15.968 17.9038 15.9039C17.9679 15.8397 18 15.7692 18 15.6923V5.30773C18 5.23079 17.9679 5.16027 17.9038 5.09615C17.8397 5.03205 17.7692 5 17.6923 5H2.3077C2.23077 5 2.16024 5.03205 2.09613 5.09615C2.03202 5.16027 1.99998 5.23079 1.99998 5.30773V15.6923C1.99998 15.7692 2.03202 15.8397 2.09613 15.9039C2.16024 15.968 2.23077 16 2.3077 16ZM7.99998 3.50003H12V1.80775C12 1.73082 11.9679 1.6603 11.9038 1.5962C11.8397 1.53208 11.7692 1.50003 11.6923 1.50003H8.3077C8.23077 1.50003 8.16024 1.53208 8.09613 1.5962C8.03203 1.6603 7.99998 1.73082 7.99998 1.80775V3.50003Z"
+                        fill="#1DA1F2" />
+                </svg>
+            </span>
+            <select [(ngModel)]="employee.position" name="position" required class="form-select role-select">
+                <option value="" disabled selected>Select Role</option>
+                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+            </select>
+        </div>
+        <div *ngIf="submitted && !employee.position" class="error">Role is required.</div>
+    </div>
+
+
+
+    <!-- Mobile view role -->
+    <div class="mb-3 d-block d-md-none">
+        <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start p-2"
+            type="button" style="border: 1px solid #ced4da;" (click)="openRolePicker()">
+            <span class="svg-icon me-2">
+                <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.3077 17.5C1.80257 17.5 1.375 17.325 1.025 16.975C0.675 16.625 0.5 16.1974 0.5 15.6923V5.30773C0.5 4.80259 0.675 4.37503 1.025 4.02503C1.375 3.67503 1.80257 3.50003 2.3077 3.50003H6.5V1.80775C6.5 1.30263 6.675 0.875076 7.025 0.525076C7.375 0.175076 7.80257 7.62939e-05 8.3077 7.62939e-05H11.6923C12.1974 7.62939e-05 12.625 0.175076 12.975 0.525076C13.325 0.875076 13.5 1.30263 13.5 1.80775V3.50003H17.6923C18.1974 3.50003 18.625 3.67503 18.975 4.02503C19.325 4.37503 19.5 4.80259 19.5 5.30773V15.6923C19.5 16.1974 19.325 16.625 18.975 16.975C18.625 17.325 18.1974 17.5 17.6923 17.5H2.3077ZM2.3077 16H17.6923C17.7692 16 17.8397 15.968 17.9038 15.9039C17.9679 15.8397 18 15.7692 18 15.6923V5.30773C18 5.23079 17.9679 5.16027 17.9038 5.09615C17.8397 5.03205 17.7692 5 17.6923 5H2.3077C2.23077 5 2.16024 5.03205 2.09613 5.09615C2.03202 5.16027 1.99998 5.23079 1.99998 5.30773V15.6923C1.99998 15.7692 2.03202 15.8397 2.09613 15.9039C2.16024 15.968 2.23077 16 2.3077 16ZM7.99998 3.50003H12V1.80775C12 1.73082 11.9679 1.6603 11.9038 1.5962C11.8397 1.53208 11.7692 1.50003 11.6923 1.50003H8.3077C8.23077 1.50003 8.16024 1.53208 8.09613 1.5962C8.03203 1.6603 7.99998 1.73082 7.99998 1.80775V3.50003Z"
+                        fill="#1DA1F2" />
+                </svg>
+            </span>
+            <span>{{ employee.position || 'Select a role' }}</span>
+        </button>
+        <div *ngIf="submitted && !employee.position" class="error mt-2">Role is required.</div>
+    </div>
+
+    <!-- Offcanvas Bottom Sheet -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="rolePicker" aria-labelledby="rolePickerLabel">
+        <div class="offcanvas-header">
+            <h5 id="rolePickerLabel">Select Role</h5>
+            <button type="button" class="btn-close text-reset " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+            <ul class="list-group">
+                <li *ngFor="let role of roles" class="list-group-item list-group-item-action" (click)="selectRole(role)"
+                    data-bs-dismiss="offcanvas">
+                    {{ role }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-6">
+            <input type="date" class="form-control" id="startDate" [(ngModel)]="employee.startDate" name="startDate"
+                placeholder="Select start date" />
+            <div *ngIf="submitted && !employee.startDate" class="error">
+                Start date is required.
+            </div>
+        </div>
+
+        <div class="col-6">
+            <input type="date" class="form-control" id="endDate" [(ngModel)]="employee.endDate" name="endDate"
+                placeholder="Select end date" [disabled]="!employee.startDate" />
+        </div>
+        <br>
+        <br>
+
+        <div *ngIf="showError" class="showError mt-3" style="color: red;">
+            End Date must be Greater than Start Date
+        </div>
+    </div>
+
+    <div class="d-flex gap-2" style="float: right;">
+        <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        <button class="btn btn-primary" (click)="saveEmployee()">
+            {{ isEdit ? 'Update' : 'Save' }}
+        </button>
+
+    </div>
+</div>
