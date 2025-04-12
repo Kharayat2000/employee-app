@@ -68,7 +68,7 @@ export class EmployeeFormComponent implements OnInit, AfterViewInit {
     const startDate = new Date(this.employee.startDate);
     const endDate = this.employee.endDate ? new Date(this.employee.endDate) : null;
 
-    if (endDate && endDate <= startDate) {
+    if (endDate && endDate < startDate) {
      this.showError = true;
       return;
     }
